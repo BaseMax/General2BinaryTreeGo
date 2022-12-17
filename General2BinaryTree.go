@@ -1,3 +1,13 @@
+/**
+ *
+ * @Name: General Tree To Binary Tree
+ * @Author: Max Base
+ * @Date: 2022/12/17
+ * @Repository: https://github.com/BaseMax/General2BinaryTree
+ * @License: GPL-3
+ *
+ */
+
 package main
 
 type BinaryNode struct {
