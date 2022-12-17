@@ -10,6 +10,8 @@
 
 package main
 
+import "fmt"
+
 type BinaryNode struct {
 	data  interface{}
 	left  *BinaryNode
@@ -33,12 +35,16 @@ func (t *GeneralTree) General2BinaryTree() *BinaryTree {
 	return &BinaryTree{root: general2BinaryTree(t.root)}
 }
 
-func printBinaryTree(root *BinaryNode) {
+func printBinaryTree(root *BinaryNode, level int) {
 	if root == nil {
 		return
 	}
-	printBinaryTree(root.left)
-	printBinaryTree(root.right)
+	for i := 0; i < level; i++ {
+		fmt.Print(" ")
+	}
+	fmt.Println(root.data)
+	printBinaryTree(root.left, level+1)
+	printBinaryTree(root.right, level+1)
 }
 
 func general2BinaryTree(root *Node) *BinaryNode {
@@ -89,5 +95,5 @@ func main() {
 	binaryTree := generalTree.General2BinaryTree()
 
 	// Print the binary tree
-	printBinaryTree(binaryTree.root)
+	printBinaryTree(binaryTree.root, 0)
 }
