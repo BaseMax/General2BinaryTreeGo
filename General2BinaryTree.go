@@ -40,7 +40,7 @@ func printBinaryTree(root *BinaryNode, level int) {
 		return
 	}
 	for i := 0; i < level; i++ {
-		fmt.Print(" ")
+		fmt.Print("   ")
 	}
 	fmt.Println(root.data)
 	printBinaryTree(root.left, level+1)
